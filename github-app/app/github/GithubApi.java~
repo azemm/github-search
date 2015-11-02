@@ -30,8 +30,7 @@ public class GithubApi {
     private final static String TOKEN = "35d3c991e7c4ef8ed66161675f5f613a806fbf8d";
 
     private static WSRequest request(String url){
-        return WS.url(url);
-	//.setQueryParameter("access_token", TOKEN);
+        return WS.url(url).setQueryParameter("access_token", TOKEN);
     }
 
 
