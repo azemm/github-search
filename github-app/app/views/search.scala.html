@@ -1,0 +1,19 @@
+@(terms : String = "")
+<div class="container">
+    <h1><img src="@routes.Assets.versioned("/images/github_logo.png")" width="120" height="70"> Github Search</h1>
+
+    <div class="row">
+
+        <div class="col-md-10 center-block">
+
+            <form class="form" method="get" action="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="searchTerms" name="searchTerms" placeholder="Search terms" value="@terms">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+
+        </div>
+
+    </div>
+

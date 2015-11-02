@@ -1,0 +1,6 @@
+.top-buffer { margin-top:20px; }
+
+.timeline_heigth {
+    max-height: 500px;
+    overflow-y: scroll;
+}

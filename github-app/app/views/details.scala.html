@@ -1,0 +1,58 @@
+@import model.User
+@import model.UserContribution
+@import model.Commit
+@(repos : String, contributors : List[User], userContribution : List[UserContribution], commits : List[Commit])
+@header()
+
+<h1><a href="/"><img src="@routes.Assets.versioned("/images/github_logo.png")" width="120" height="70"></a> Repository details @repos Details</h1>
+
+
+<div class="row center-block">
+    <div class="col-md-4">
+        <h3>Timeline (100 commits)</h3>
+
+        <ol class="timeline top-buffer timeline_heigth">
+        @for(c <- commits){
+            <li class="tl-node">
+                <div class="tl-stamp">@c.getDate()</div>
+                <div class="tl-content">@c.getCommitter().getLogin()</div>
+                <a href="@c.getHtml_url()" target="_blank">@c.getSha()</a>
+            </li>
+        }
+        </ol>
+    </div>
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h3>Contributors</h3>
+
+                <ul class="list-group top-buffer">
+                @for(c <- contributors){
+                    <li class="list-group-item">
+                        <a href="@c.getHtml_url()" target="_blank"> <img src="@c.getAvatar_url()" height="40" width="40"> @c.getLogin </a></li>
+                }
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>User contributions (last 100 commits)</h3>
+
+                <ul class="list-group top-buffer">
+                @for(u <- userContribution){
+                    <li class="list-group-item">
+                        <span class="badge">@u.getCommits</span>
+                        <a href="@u.getUser().getHtml_url()" target="_blank">
+                            <img src="@u.getUser().getAvatar_url()" height="40" width="40"> @u.getUser().getLogin()
+                        </a>
+                    </li>
+                }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@footer()
