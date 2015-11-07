@@ -1,4 +1,21 @@
-This is your new Play application
+Play Java application
 =================================
 
-This file will be packaged with your application, when using `activator dist`.
+Allows you to search and browser Github repositories.
+
+When you choose a repository, a page is presented with brief informations about the repository 
+(last commits, contributors, commits by contributors)
+
+
+Dependencies
+=================================
+
+Java 8, Play framework 2.3
+
+
+Execution
+=================================
+
+shell commands : 
+ - activator run (debug mode)
+ - activatore start (production mode)
