@@ -1,7 +1,7 @@
 Play Java application
 =================================
 
-Allows you to search and browser Github repositories.
+Allows you to search and browse Github repositories.
 
 When you choose a repository, a page is presented with brief informations about the repository 
 (last commits, contributors, commits by contributors)
