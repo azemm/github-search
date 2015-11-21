@@ -18,4 +18,4 @@ Execution
 
 shell commands : 
  - activator run (debug mode)
- - activatore start (production mode)
+ - activator start (production mode)
